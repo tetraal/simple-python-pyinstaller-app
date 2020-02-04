@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Deliver') { 
            agent {
-               label 'linux'
+               label 'master'
            }
             steps {
                 sh 'sh "docker run -v $(pwd -P):/sources cdxr/pyinstaller'
