@@ -29,7 +29,7 @@ pipeline {
         stage('Deliver') { 
            agent any
             steps {
-                sh 'docker run -v $(pwd -P):/sources cdxr/pyinstaller'
+                sh 'docker run -v $(pwd -P):/sources cdxr/pyinstaller:python2'
                 sh 'pyinstaller --onefile sources/add2vals.py' 
             }
             post {
